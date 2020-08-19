@@ -1,0 +1,9 @@
+[mkt]
+10.20.30.40 server=SERVER_NAME
+
+
+[mkt:vars]
+ansible_network_os=routeros
+ansible_user=USER_NAME
+ansible_password=PASSWORD
+ansible_connection=network_cli

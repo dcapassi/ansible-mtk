@@ -1,0 +1,16 @@
+---
+- name: MKT Disable Profile
+  connection: network_clid
+  gather_facts: false
+  hosts: mkt
+  tasks:
+
+   - name: Get the server status before the change
+     routeros_command:
+      commands: ip hotspot print where name=[find name={{server}}]
+   - name: Disable the Hotspot
+     routeros_command:
+      commands: ip hotspot disable [find name={{server}}]
+   - name: Get the server status after the change
+     routeros_command:
+      commands: ip hotspot print where name=[find name={{server}}]
